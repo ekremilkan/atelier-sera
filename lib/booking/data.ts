@@ -26,7 +26,7 @@ export const SALON: SalonConfig = {
 
 export const CATEGORIES: Category[] = [
   { id: "cut", name: { en: "Cut & Style", de: "Schnitt & Styling" } },
-  { id: "color", name: { en: "Color", de: "Farbe" } },
+  { id: "color", name: { en: "Colour", de: "Farbe" } },
   { id: "treatment", name: { en: "Treatments", de: "Pflege" } },
   { id: "bridal", name: { en: "Bridal", de: "Braut" } },
   { id: "brows", name: { en: "Brows & Skin", de: "Brauen & Haut" } },
@@ -93,7 +93,7 @@ export const SERVICES: Service[] = [
   {
     id: "root-color",
     category: "color",
-    name: { en: "Root Color", de: "Ansatzfarbe" },
+    name: { en: "Root Colour", de: "Ansatzfarbe" },
     description: {
       en: "Seamless regrowth coverage, matched to your lengths under daylight.",
       de: "Nahtlose Ansatzfarbe, bei Tageslicht exakt auf deine Längen abgestimmt.",
@@ -104,7 +104,7 @@ export const SERVICES: Service[] = [
   {
     id: "full-color",
     category: "color",
-    name: { en: "Full Head Color", de: "Komplettfarbe" },
+    name: { en: "Full Head Colour", de: "Komplettfarbe" },
     description: {
       en: "One considered shade from root to tip, glazed for depth.",
       de: "Eine durchdachte Nuance vom Ansatz bis in die Spitzen, mit Glossing für Tiefe.",
@@ -126,7 +126,7 @@ export const SERVICES: Service[] = [
   {
     id: "color-correction",
     category: "color",
-    name: { en: "Color Correction", de: "Farbkorrektur" },
+    name: { en: "Colour Correction", de: "Farbkorrektur" },
     description: {
       en: "Box dye, banding, brass. We assess first and plan it in honest stages.",
       de: "Drogeriefarbe, Streifen, Gelbstich. Wir analysieren zuerst und planen ehrlich in Etappen.",
@@ -141,7 +141,7 @@ export const SERVICES: Service[] = [
     category: "treatment",
     name: { en: "Bond Repair Ritual", de: "Bond-Repair-Ritual" },
     description: {
-      en: "Rebuilds what bleach and heat take away. Best added to any color service.",
+      en: "Rebuilds what bleach and heat take away. Best added to any colour service.",
       de: "Baut auf, was Blondierung und Hitze nehmen. Ideal zu jeder Farbbehandlung.",
     },
     durationMin: 30,
@@ -256,7 +256,7 @@ export const STYLISTS: Stylist[] = [
   {
     id: "mara",
     name: "Mara Lindqvist",
-    role: { en: "Color", de: "Farbe" },
+    role: { en: "Colour", de: "Farbe" },
     serviceIds: [...ids("color"), ...ids("treatment"), "blowout", "fringe"],
     shifts: {
       2: h("10:00", "19:00"),

@@ -7,15 +7,24 @@ const stamp = (d: Date) => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}
 const esc = (s: string) =>
   s.replace(/\\/g, "\\\\").replace(/\n/g, "\\n").replace(/,/g, "\\,").replace(/;/g, "\\;");
 
-/** Lines longer than 75 octets must be folded (RFC 5545 §3.1). */
+const utf8 = new TextEncoder();
+
+/** Lines longer than 75 octets must be folded (RFC 5545 §3.1) — never inside a UTF-8 character. */
 function fold(line: string): string {
   const out: string[] = [];
-  let rest = line;
-  while (rest.length > 74) {
-    out.push(rest.slice(0, 74));
-    rest = " " + rest.slice(74);
+  let current = "";
+  let bytes = 0;
+  for (const ch of line) {
+    const n = utf8.encode(ch).length;
+    if (bytes + n > 75) {
+      out.push(current);
+      current = " ";
+      bytes = 1;
+    }
+    current += ch;
+    bytes += n;
   }
-  out.push(rest);
+  out.push(current);
   return out.join("\r\n");
 }
 

@@ -283,7 +283,7 @@ describe("ics", () => {
         createdAt: "",
       },
       title: "Atelier Sera — Signature Cut",
-      description: "With Jonas Ebert; ref AS-2610-1234",
+      description: "With Inès Moreau — Bridal Hair & Make-up, Bond Repair Ritual. Reference AS-2610-1234. Please arrive five minutes early.",
       location: "Lehmweg 21, 20251 Hamburg",
       timeZone: "Europe/Berlin",
       now: new Date("2026-10-05T10:00:00Z"),
@@ -292,6 +292,7 @@ describe("ics", () => {
     expect(ics).toContain("DTEND:20261006T121500Z\r\n");
     expect(ics).toContain("LOCATION:Lehmweg 21\\, 20251 Hamburg");
     expect(ics.startsWith("BEGIN:VCALENDAR\r\n")).toBe(true);
-    expect(ics.split("\r\n").every((l) => l.length <= 75)).toBe(true);
+    const enc = new TextEncoder();
+    expect(ics.split("\r\n").every((l) => enc.encode(l).length <= 75)).toBe(true);
   });
 });

@@ -72,10 +72,11 @@ export function zonedToUtc(date: ISODate, minutes: Minutes, timeZone: string): D
   return new Date(guess);
 }
 
+/** "45 min", "75 min", "2 h", "3 h 30" — minutes read better than "1h 15" up to two hours. */
 export function formatDuration(min: number, locale: "en" | "de" = "en"): string {
   const h = Math.floor(min / 60);
   const m = min % 60;
-  if (h === 0) return `${m} min`;
-  if (m === 0) return locale === "de" ? `${h} Std.` : `${h}h`;
-  return `${h}h ${pad(m)}`;
+  if (min < 120 && m !== 0) return `${min} min`;
+  const unit = locale === "de" ? "Std." : "h";
+  return m === 0 ? `${h} ${unit}` : `${h} ${unit} ${pad(m)}`;
 }
