@@ -107,12 +107,6 @@ body::after {
   mix-blend-mode: overlay;
 }
 
-@media (pointer: fine) {
-  html.has-cursor,
-  html.has-cursor * {
-    cursor: none !important;
-  }
-}
 }
 
 /* ───────────────────────── Typography ───────────────────────── */

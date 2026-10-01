@@ -54,7 +54,6 @@ function Member({
     <article className={`w-[78vw] shrink-0 snap-start sm:w-[46vw] lg:w-auto ${layout.cell}`}>
       <button
         type="button"
-        data-cursor={dict.team.viewWork}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onFocus={() => setHover(true)}

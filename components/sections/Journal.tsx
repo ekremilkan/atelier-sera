@@ -63,7 +63,6 @@ export function Journal() {
 
       <div
         {...drag}
-        data-cursor={dict.journal.drag}
         className="no-scrollbar mt-14 flex cursor-grab snap-x snap-mandatory items-end gap-4 overflow-x-auto scroll-px-4 px-4 pb-2 active:cursor-grabbing sm:gap-6 sm:scroll-px-6 sm:px-6 lg:mt-20 lg:snap-none lg:gap-8 lg:px-10"
         role="region"
         aria-label={dict.journal.label}

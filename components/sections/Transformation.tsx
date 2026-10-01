@@ -39,7 +39,7 @@ function CompareSlider() {
   return (
     <div
       ref={ref}
-      className="relative aspect-[4/5] touch-pan-y select-none overflow-hidden bg-ink lg:aspect-auto lg:h-[min(88vh,62rem)]"
+      className="relative aspect-[4/5] cursor-ew-resize touch-pan-y select-none overflow-hidden bg-ink lg:aspect-auto lg:h-[min(88vh,62rem)]"
       onPointerDown={(e) => {
         setTouched(true);
         setDragging(true);
@@ -49,7 +49,6 @@ function CompareSlider() {
       onPointerMove={(e) => dragging && fromPointer(e.clientX)}
       onPointerUp={() => setDragging(false)}
       onPointerCancel={() => setDragging(false)}
-      data-cursor={dict.journal.drag}
     >
       <RevealImage className="absolute inset-0">
         {/* After */}

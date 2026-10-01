@@ -110,7 +110,6 @@ export function Services() {
                       <li key={s.id} className="border-b border-line">
                         <button
                           type="button"
-                          data-cursor={dict.services.book}
                           onMouseEnter={() => setActive(s.id)}
                           onFocus={() => setActive(s.id)}
                           onClick={() => open({ serviceIds: [s.id] })}

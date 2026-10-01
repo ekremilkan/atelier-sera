@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { BookingOverlay } from "@/components/booking/BookingOverlay";
 import { BookingProvider } from "@/components/booking/BookingProvider";
 import { Header } from "@/components/sections/Header";
-import { Cursor } from "@/components/ui/Cursor";
 import { bookingService } from "@/lib/booking/service";
 import { IMG, SITE_URL } from "@/lib/content";
 import { getDictionary, hasLocale, LOCALES } from "@/lib/i18n";
@@ -66,7 +65,6 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
             <Header />
             {children}
             <BookingOverlay />
-            <Cursor />
           </BookingProvider>
         </I18nProvider>
       </body>
