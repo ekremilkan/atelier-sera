@@ -58,7 +58,7 @@ function LangSwitch({ className = "" }: { className?: string }) {
   const other = locale === "en" ? "de" : "en";
   return (
     <Link
-      href={`/${other}`}
+      href={`/${other}/`}
       scroll={false}
       hrefLang={other}
       aria-label={dict.nav.switchTo}

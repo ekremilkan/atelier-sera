@@ -3,7 +3,7 @@
 /** Change this to your studio's name — it appears in the footer credit. */
 export const STUDIO_NAME = "[Your Studio]";
 
-export const SITE_URL = "https://atelier-sera.example";
+export const SITE_URL = "https://ekremilkan.github.io/atelier-sera";
 
 export const CONTACT = {
   phone: "+49 40 1234 5678",

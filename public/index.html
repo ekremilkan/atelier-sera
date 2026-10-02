@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Atelier Sera</title>
+    <!-- Static hosting has no server-side redirect: pick the language in the browser. -->
+    <script>
+      var de = (navigator.languages || [navigator.language || ""]).some(function (l) {
+        return /^de\b/i.test(l);
+      });
+      location.replace(de ? "de/" : "en/");
+    </script>
+    <meta http-equiv="refresh" content="0; url=en/" />
+    <style>body{background:#141211}</style>
+  </head>
+  <body></body>
+</html>

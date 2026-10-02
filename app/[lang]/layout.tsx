@@ -10,6 +10,9 @@ import { I18nProvider } from "@/lib/i18n/provider";
 import { bodoni, manrope } from "./fonts";
 import "../globals.css";
 
+// Only /en and /de exist — required for a static export.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));
 }

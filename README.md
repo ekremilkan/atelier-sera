@@ -10,12 +10,23 @@ TypeScript, Tailwind CSS 4 and Framer Motion.
 
 ```bash
 npm install
-npm run dev        # http://localhost:3000 → redirects to /en or /de
+npm run dev        # open http://localhost:3000/en (or /de)
 npm test           # booking engine tests (Vitest)
-npm run build && npm start   # production build
+npm run build      # static export → out/
 ```
 
 Requires Node 20.9+.
+
+## Deployment (GitHub Pages)
+
+The site is a fully static export (`output: "export"`). Every push to `main` runs
+`.github/workflows/deploy.yml`: tests → build with `PAGES_BASE_PATH=/<repo-name>` →
+publish `out/` to Pages. One-time setup: **Settings → Pages → Source: GitHub Actions**.
+
+Live: https://ekremilkan.github.io/atelier-sera/
+
+`public/index.html` sends visitors from the root to `/de/` or `/en/` based on the
+browser language (static hosting has no server-side redirect).
 
 ## Before you show it
 
@@ -32,7 +43,7 @@ Requires Node 20.9+.
 
 ```
 app/[lang]/            Root layout (fonts, metadata, providers) and the one-page site
-proxy.ts               "/" → /en or /de from Accept-Language
+public/index.html      "/" → /en/ or /de/ from the browser language
 lib/booking/           Booking engine — no React, no UI
   types.ts             Domain types (dates as ISO strings, times as minutes, Europe/Berlin)
   data.ts              Salon hours, services, stylists, shifts (mock catalogue)
